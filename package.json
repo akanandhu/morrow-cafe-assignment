@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/akanandhu/morrow-cafe-assignment#readme",
   "dependencies": {
+    "@astryxdesign/theme-matcha": "^0.6.3",
     "next": "^16.3.6",
     "react": "^19.3.0",
     "react-dom": "^19.3.0"

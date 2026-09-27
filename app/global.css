@@ -1,1 +1,28 @@
+@layer reset, theme, base, astryx-base, astryx-theme, components, utilities;
 @import "tailwindcss";
+@import "@astryxdesign/theme-matcha/theme.css";
+
+/* Bridge the official Matcha palette into Tailwind; no client theme provider. */
+@theme inline {
+  --color-paper: var(--color-background-body);
+  --color-surface: var(--color-background-surface);
+  --color-ink: var(--color-text-primary);
+  --color-muted: color-mix(in srgb, var(--color-text-secondary) 80%, var(--color-text-primary));
+  --color-olive: var(--color-accent);
+  --color-sage: var(--color-background-muted);
+  --color-contrast: var(--color-on-accent);
+  --font-sans: var(--font-morrow), Arial, Helvetica, sans-serif;
+}
+
+@theme {
+  --animate-hero-reveal: hero-reveal 750ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  @keyframes hero-reveal {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  --animate-claim-reveal: claim-reveal 380ms ease-out both;
+  @keyframes claim-reveal {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
